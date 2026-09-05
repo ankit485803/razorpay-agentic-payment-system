@@ -1,0 +1,25 @@
+
+
+razorpay-ai-payment-agent/
+├── .gitignore
+├── README.md              
+├── server/
+│   ├── package.json
+│   ├── .env.example
+│   ├── index.js           # Express app, /health + /api/agent routes
+│   ├── agent.js           # Claude tool-calling loop (core logic)
+│   └── tools.js           # create_payment_link tool + validation
+└── client/
+    ├── package.json
+    ├── vite.config.js     # proxies /api and /health to :3000
+    ├── index.html
+    └── src/
+        ├── main.jsx
+        ├── App.jsx        # chat UI
+        └── index.css
+
+
+
+folders:
+client -- frontend
+server -- backend
