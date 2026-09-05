@@ -19,6 +19,7 @@ An AI-powered payment agent designed for **AI-driven growth and agentic commerce
 - Backend: Node.js, Express (ES Modules)
 - AI Agent: Anthropic Claude (tool calling)
 - Payments: Razorpay Test Mode APIs
+- Anthropic: Claude API Keys
 
 ## Setup
 
