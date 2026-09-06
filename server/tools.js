@@ -1,27 +1,28 @@
 
-// Tool definitions passed to Claude, and the functions that actually execute them.
-
 export const tools = [
   {
-    name: 'create_payment_link',
-    description:
-      "Creates a Razorpay test-mode payment link for a given amount. Use this when the user clearly wants to request or send a payment, and you have at least a valid positive amount.",
-    input_schema: {
-      type: 'object',
-      properties: {
-        amount: {
-          type: 'number',
-          description: 'Amount in INR rupees, e.g. 500 for ₹500. Must be a positive number.',
+    type: 'function',
+    function: {
+      name: 'create_payment_link',
+      description:
+        "Creates a Razorpay test-mode payment link for a given amount. Use this when the user clearly wants to request or send a payment, and you have at least a valid positive amount.",
+      parameters: {
+        type: 'object',
+        properties: {
+          amount: {
+            type: 'number',
+            description: 'Amount in INR rupees, e.g. 500 for ₹500. Must be a positive number.',
+          },
+          description: {
+            type: 'string',
+            description: "Short description of what the payment is for, e.g. 'Design work for Priya'.",
+          },
+          customer_name: { type: 'string' },
+          customer_email: { type: 'string' },
+          customer_phone: { type: 'string' },
         },
-        description: {
-          type: 'string',
-          description: "Short description of what the payment is for, e.g. 'Design work for Priya'.",
-        },
-        customer_name: { type: 'string' },
-        customer_email: { type: 'string' },
-        customer_phone: { type: 'string' },
+        required: ['amount', 'description'],
       },
-      required: ['amount', 'description'],
     },
   },
 ];
