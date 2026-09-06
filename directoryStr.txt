@@ -1,11 +1,11 @@
 
 
-razorpay-ai-payment-agent/
+razorpay-agentic-payment-system/
 ├── .gitignore
 ├── README.md              
 ├── server/
 │   ├── package.json
-│   ├── .env.example
+│   ├── .env
 │   ├── index.js           # Express app, /health + /api/agent routes
 │   ├── agent.js           # Claude tool-calling loop (core logic)
 │   └── tools.js           # create_payment_link tool + validation
